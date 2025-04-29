@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("JEsstatistics!");
+        //System.out.println("JStattistics!");
                
         // variável : e um espaço reserevado ne memoria do computador 
         // Variável : serve para guardad valores
@@ -33,10 +33,10 @@ public class App {
                
 
         //System.out.println(opcao);
-        String opcaoVariavel = JOptionPane.showInputDialog(null, "O Jogo da Estatística: JStattistics");
+        String opcaoVariavel = JOptionPane.showInputDialog(null, "Que tipo de variável ele deseja cadastrar:\n 1-Quantitativa \n 2-Qualitativa");
         int opVariavel = Integer.parseInt(opcaoVariavel);
-        JOptionPane.showMessageDialog(null, "Que tipo de variável ele deseja cadastrar:\n 1-Quantitativa \n 2-Qualitativa");
-        
+        //JOptionPane.showMessageDialog(null, "Que tipo de variável ele deseja cadastrar:\n 1-Quantitativa \n 2-Qualitativa");
+        JOptionPane.showMessageDialog(null, "sua escolha:"+opVariavel,"JStattistics", JOptionPane.DEFAULT_OPTION);
 
         
     }
