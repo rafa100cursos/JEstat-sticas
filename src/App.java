@@ -13,6 +13,25 @@ public class App {
            
            String mensagem = "Cliente cadastrado:\nNome: " + nome + "\nEndereço: " + endereco;
            JOptionPane.showMessageDialog(null, mensagem);
+
+           
+        String larguraStr = JOptionPane.showInputDialog("Digite a largura do jardim (em metros):");
+        
+        String comprimentoStr = JOptionPane.showInputDialog("Digite o comprimento do jardim (em metros):");
+        
+        try {
+            // Converte as entradas para números
+            double largura = Double.parseDouble(larguraStr);
+            double comprimento = Double.parseDouble(comprimentoStr);
+            
+            
+            double area = largura * comprimento;
+            
+            
+            JOptionPane.showMessageDialog(null, "A área do jardim é: " + area + " metros quadrados.");
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, insira valores numéricos válidos.");
+        }
        }
        
 
