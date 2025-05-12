@@ -32,8 +32,26 @@ public class App {
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Por favor, insira valores numéricos válidos.");
         }
+
+        String input = JOptionPane.showInputDialog("Digite o tamanho do jardim em metros quadrados:");
+                    
+                    
+                    try {
+                        double tamanho = Double.parseDouble(input);
+                        
+                        
+                        if (tamanho >= 100) {
+                            JOptionPane.showMessageDialog(null, "O jardim é Grande.");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "O jardim é Pequeno.");
+                        }
+                    } 
+                    catch (NumberFormatException e) {
+                        JOptionPane.showMessageDialog(null, "Por favor, insira um número válido.");
+                    }
+
        }
        
-
+       
     
 }
