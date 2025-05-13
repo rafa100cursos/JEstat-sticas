@@ -34,28 +34,31 @@ public class App {
         }
 
         String input = JOptionPane.showInputDialog("Digite o tamanho do jardim em metros quadrados:");
-                    
-                    
-                    try {
-                        double tamanho = Double.parseDouble(input);
-                        
-                        
-                        if (tamanho >= 100) {
-                            JOptionPane.showMessageDialog(null, "O jardim é Grande.");
-                        } else {
-                            JOptionPane.showMessageDialog(null, "O jardim é Pequeno.");
-                        }
-                    } 
-                    catch (NumberFormatException e) {
-                        JOptionPane.showMessageDialog(null, "Por favor, insira um número válido.");
-                    }
+        try {
+            double tamanho = Double.parseDouble(input);
+            String classificacao;
 
-                    
+            // Usando switch/case para classificar
+            int categoria = (tamanho >= 100) ? 1 : 2;
+
+            switch (categoria) {
+                case 1:
+                    classificacao = "Grande";
+                    break;
+                case 2:
+                    classificacao = "Pequeno";
+                    break;
+                default:
+                    classificacao = "Desconhecido";
+            }
+
+            JOptionPane.showMessageDialog(null, "O jardim é " + classificacao + ".");
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, insira um número válido.");
+        }
+
+                          
 
        }
-
-       
-       
-       
-    
+ 
 }
