@@ -81,8 +81,45 @@ public class App {
             JOptionPane.showMessageDialog(null, "Por favor, insira um número válido.");
         }
 
-                          
+        //N3-7. Cadastro de vários serviços - Usa loop até usuário digitar 'sair'.
+        do {
+            // Aqui você pode solicitar informações do serviço
+            String nomeServico = JOptionPane.showInputDialog("Digite o nome do serviço (ou 'sair' para encerrar):");
+            if (nomeServico == null || nomeServico.equalsIgnoreCase("sair")) {
+                break; // Encerra o loop se o usuário digitar 'sair' ou cancelar
+            }
+
+            String valorStr = JOptionPane.showInputDialog("Digite o valor do serviço:");
+            try {
+                double valor = Double.parseDouble(valorStr);
+                // Aqui você pode processar o serviço, por exemplo, determinar a classificação
+                String classificacao = (valor > 100) ? "Premium" : "Standard";
+
+                // Exibir a classificação do jardim
+                JOptionPane.showMessageDialog(null, "O jardim é " + classificacao + ".");
+
+                // Opcional: mostrar o desconto aplicado
+                double desconto = 0.0;
+                if (valor > 200) {
+                    desconto = 0.1; // exemplo de desconto de 10%
+                }
+
+                if (desconto > 0) {
+                    JOptionPane.showMessageDialog(null, "Você recebeu um desconto de " + (int)(desconto * 100) + "% por sua fidelidade!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Sem desconto de fidelidade no momento.");
+                }
+
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Por favor, insira um número válido.");
+            }
+        } while (true);
+
+        JOptionPane.showMessageDialog(null, "Cadastro encerrado.");
+    }
+
+                              
 
        }
  
-}
+
