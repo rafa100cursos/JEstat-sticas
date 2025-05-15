@@ -118,18 +118,22 @@ public class App {
         JOptionPane.showMessageDialog(null, "Cadastro encerrado.");
     }
 
-    try {
-        // Converte as entradas para números
-        double largura = Double.parseDouble(larguraStr);
-        double comprimento = Double.parseDouble(comprimentoStr);
-        
-        
-        double area = largura * comprimento;                     
-
-       }
-
-       //8. Média da área dos jardins - Calcula a média de N áreas.
+          //8. Média da área dos jardins - Calcula a média de N áreas.
+          
+          try {
+            // Converte as entradas para números
+            double largura = Double.parseDouble(larguraStr);
+            double comprimento = Double.parseDouble(comprimentoStr);
+            
+            
+            double area = largura * comprimento;
+            
+            
+            JOptionPane.showMessageDialog(null, "A área do jardim é: " + area + " metros quadrados.");
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, insira valores numéricos válidos.");
+        }
 
 
  
-
+}
