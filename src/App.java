@@ -1,7 +1,43 @@
 import javax.swing.JOptionPane;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+
+    public static final int FFIELIDADE = 10;//Constante x Variável
+    public static final double DESCONTO =0.10;
+    public static void main(String args[]){
+
+        
+        //JOptionPane.showMessageDialog(null, "Iniciadndo compra: \n 1 - Poda(150.00) \n 2 - Cortar grama (250.00)");
+        int contador = 0;
+        double acumulador = 0;
+
+        int opcao;
+        do{
+             opcao = Integer.parseInt(JOptionPane.showInputDialog(null,"Iniciando compra: \n 1 - Poda(150.00) \n 2 - Cortar grama (250.00) \n 3 - Sair"));
+             if(opcao == 1){
+                acumulador=acumulador+150;                
+             }
+             else if(opcao == 2){
+                acumulador=acumulador+250;
+                contador = contador +10;
+             }
+        }
+
+        while(opcao != 3);
+        JOptionPane.showMessageDialog(null, "totasl da compra:");
+        if(contador >= FFIELIDADE){
+            double valorComDesconto = acumulador - (acumulador*DESCONTO);
+            JOptionPane.showMessageDialog(null,"Valor com Desconto");
+        }
+
+      }  
+                          
+
+       
+ 
+}
+
+/*    public static void main(String[] args) throws Exception {
 
         JOptionPane.showMessageDialog(null,  "Alô jardim");
 
@@ -80,9 +116,4 @@ public class App {
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Por favor, insira um número válido.");
         }
-
-                          
-
-       }
- 
-}
+*/      
